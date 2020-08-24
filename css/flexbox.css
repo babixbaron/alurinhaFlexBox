@@ -1,0 +1,129 @@
+/* 1- identificar os elementos que eu quero alinhar
+   2 - identificar o elemento pai destes elementos, pois é nele que iremos mexer */
+
+
+.cabecalhoPrincipal .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* distribui o espaço que está sobrando entre os elementos */
+}
+
+.cabecalhoPrincipal-nav {
+    display: flex;
+}
+
+.rodapePrincipal-patrocinadores .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rodapePrincipal-patrocinadores-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    margin-right: 5%;
+}
+
+.rodapePrincipal-contatoForm {
+    width: 25%;
+}
+
+.rodapePrincipal-contatoForm-fieldset {
+    display: flex; /* os filhos ficam do mesmo tamanho (height)*/
+}
+
+.rodapePrincipal-navMap-list {
+    display: flex;
+    flex-direction: column; /*quando mudamos de row para column os eixos de alinhamento também mudam automaticamente*/
+    flex-wrap: wrap; /*quebrar coluna para a direita após atingir a altura definida*/
+    height: 250px;
+    /*flex-flow: column wrap; => esta propriedade junta as duas acima podendo substituí-las*/
+}
+
+.conteudoPrincipal-cursos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.conteudoPrincipal-cursos-link {
+    width: 23%;
+}
+
+.videoSobre .container{
+    display: flex;
+}
+
+.videoSobre-sobre {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-grow: 2; /*ocupa o espaço que estava sobrando na página */
+}
+
+.videoSobre-video {
+    flex-grow: 1;
+    flex-shrink: 2;
+}
+
+.videoSobre-sobre-list {
+    flex-grow: 1; /*fez a lista crescer para baixo para descer o botão */
+}
+
+
+/* parte mobile */
+
+@media(max-width:768px) {
+    .cabecalhoPrincipal .container {
+        flex-direction: column;
+        align-items: initial;
+        text-align: center;
+    }
+    
+    .cabecalhoPrincipal-nav {
+        flex-direction: column;
+    }
+    
+    .conteudoPrincipal-cursos {
+        flex-direction: column;
+    }
+    
+    .conteudoPrincipal-cursos-link {
+        width: 100%;
+    }
+    
+    .rodapePrincipal-navMap-list {
+        height: auto;
+    }
+    
+    .rodapePrincipal-patrocinadores .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .rodapePrincipal-patrocinadores-list {
+        width: 100%;
+        margin: 0;
+    }
+    
+    .rodapePrincipal-contatoForm {
+        width: 100%;
+    }
+    
+    .rodapePrincipal-contatoForm-fieldset {
+        justify-content: center;
+    }
+
+    .cabecalhoPrincipal-nav-link-app {
+        order: -1; /*padrão de ordem é 0*/
+    }
+
+    .videoSobre .container {
+        flex-direction: column;
+    }
+
+    .videoSobre-video {
+        margin: 0 auto;
+    } 
+}
+
